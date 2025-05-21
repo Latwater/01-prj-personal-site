@@ -165,3 +165,11 @@ li {
   font-size: 1.1em;
   text-align: center;
 }
+
+/* Style for description texts to make them larger, bolder, and use a unique font */
+.desc-text {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.2em; /* Make text larger */
+  font-weight: 600;  /* Slightly bolder */
+  color: #222;       /* Dark color for readability */
+}
