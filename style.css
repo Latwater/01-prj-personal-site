@@ -42,6 +42,8 @@ section:first-of-type {
 /* Give each section a slightly darker background color */
 #about-me {
   background-color: #d0f5ee; /* lightest */
+  padding-top: 15px; /* less space at the top */
+  padding-bottom: 40px;
 }
 #skills {
   background-color: #b8e9e0; /* a bit darker */
@@ -98,7 +100,7 @@ li {
 .profile-photo {
   display: flex;
   justify-content: center; /* center the photo horizontally */
-  margin-bottom: 20px;
+  margin-bottom: 10px; /* less space below the photo */
 }
 
 .profile-photo img {
@@ -172,4 +174,29 @@ li {
   font-size: 1.2em; /* Make text larger */
   font-weight: 600;  /* Slightly bolder */
   color: #222;       /* Dark color for readability */
+}
+
+/* Small circular flag image above Spanish skill */
+.flag-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #5fcbb4;
+  display: block;
+  margin: 0 auto 6px auto; /* center and add space below */
+}
+
+.song-title {
+  background: #b8e9e0;      /* pastel teal to match the site theme */
+  border-radius: 10px;      /* rounded corners for character */
+  border: 2px solid #5fcbb4;/* seafoam green border for theme */
+  padding: 6px 10px;        /* a bit more padding for a cute box look */
+  font-size: 0.98em;
+  color: #5bb3ff;           /* light blue text */
+  font-family: 'Times New Roman', Times, serif; /* use serif font */
+  text-align: center;
+  width: 100%;
+  margin-bottom: 4px;       /* space between boxes */
+  box-shadow: 1px 2px 6px #b8e9e040; /* faint shadow for character */
 }
