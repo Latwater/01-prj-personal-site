@@ -1,8 +1,15 @@
 /* Add you CSS here */
 
-/* Set a nice background color and font for the whole page */
+/* Set a smooth vertical gradient background for the whole page */
 body {
-  background-color: #d0f5ee; /* light seafoam green */
+  /* Gradient goes from light seafoam green at the top to darker at the bottom */
+  background: linear-gradient(
+    to bottom,
+    #d0f5ee 0%,    /* very light at the top */
+    #b8e9e0 40%,   /* a bit darker in the middle */
+    #a0ded2 75%,   /* even darker further down */
+    #88d2c4 100%   /* darkest at the bottom */
+  );
   font-family: 'Times New Roman', Times, serif; /* use serif font for all text */
   color: #222;
   margin: 0;
@@ -18,8 +25,10 @@ h1 {
   text-align: center;
   margin-top: 30px;
   margin-bottom: 20px;
-  color: #3366cc; /* base blue for first heading */
+  color: #5fd6c9; /* lighter, more greenish blue */
   font-family: 'Times New Roman', Times, serif; /* ensure serif font */
+  font-size: 2.8em; /* make the heading much bigger */
+  text-shadow: 0 2px 12px #b8e9e0, 0 1px 0 #fff; /* soft glow and pop effect */
 }
 
 /* Remove card/box styling and add different background colors for each section */
@@ -55,6 +64,20 @@ section:first-of-type {
   background-color: #88d2c4; /* darkest */
 }
 
+/* Contact section background: a bit darker to continue the gradient theme */
+#contact {
+  background-color: #6fc3b2; /* slightly darker teal */
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+/* Style the Contact heading */
+#contact h2 {
+  color: #18404d; /* dark blue-green for contrast */
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+
 /* Style section headings with progressively darker blue/green colors */
 #about-me h2 {
   color: #3366cc; /* base blue */
@@ -77,14 +100,75 @@ section:first-of-type {
   font-family: 'Times New Roman', Times, serif;
 }
 
-/* Style lists */
-ul {
-  padding-left: 20px;
+/* Simple contact form styling for beginners */
+.contact-form {
+  max-width: 350px;
+  margin: 0 auto;
+  background: none; /* keep background transparent */
+  padding: 16px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
-/* Add a little space between list items */
-li {
-  margin-bottom: 8px;
+/* Style the labels and inputs */
+.contact-form label {
+  font-size: 1em;
+  margin-bottom: 4px;
+  color: #18404d;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 2px solid #5fcbb4;
+  border-radius: 8px;
+  font-size: 1em;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #e0f7f3;
+  box-sizing: border-box;
+}
+
+/* Style the submit button */
+.contact-form button {
+  background-color: #5fcbb4;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 0;
+  font-size: 1.1em;
+  font-family: 'Times New Roman', Times, serif;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.contact-form button:hover {
+  background-color: #3ea18a;
+}
+
+/* Remove bullets from favorite artists and foods sections */
+#favorite-artists ul,
+#favorite-foods ul {
+  display: none;
+}
+
+/* Center and arrange skills side by side, remove bullets */
+#skills ul {
+  display: flex;
+  justify-content: center; /* center the row */
+  gap: 32px; /* space between items */
+  list-style: none; /* remove bullet points */
+  padding-left: 0; /* remove default padding */
+  margin: 0; /* remove default margin */
+}
+
+#skills li {
+  margin-bottom: 0; /* remove bottom margin */
+  font-size: 1.1em;
+  text-align: center;
 }
 
 /* Align the description text in the About Me section and use a serif font */
@@ -104,8 +188,8 @@ li {
 }
 
 .profile-photo img {
-  width: 140px; /* size of the circle */
-  height: 140px;
+  width: 300px; /* much bigger circle */
+  height: 300px;
   object-fit: cover; /* make sure the image covers the circle */
   border-radius: 50%; /* make the image circular */
   border: 4px solid #5fcbb4; /* soft seafoam green border */
@@ -146,28 +230,6 @@ li {
   font-family: 'Times New Roman', Times, serif;
 }
 
-/* Remove bullets from favorite artists and foods sections */
-#favorite-artists ul,
-#favorite-foods ul {
-  display: none;
-}
-
-/* Center and arrange skills side by side, remove bullets */
-#skills ul {
-  display: flex;
-  justify-content: center; /* center the row */
-  gap: 32px; /* space between items */
-  list-style: none; /* remove bullet points */
-  padding-left: 0; /* remove default padding */
-  margin: 0; /* remove default margin */
-}
-
-#skills li {
-  margin-bottom: 0; /* remove bottom margin */
-  font-size: 1.1em;
-  text-align: center;
-}
-
 /* Style for description texts to make them larger, bolder, and use a unique font */
 .desc-text {
   font-family: 'Times New Roman', Times, serif;
@@ -199,4 +261,61 @@ li {
   width: 100%;
   margin-bottom: 4px;       /* space between boxes */
   box-shadow: 1px 2px 6px #b8e9e040; /* faint shadow for character */
+}
+
+/* Add a soft shadow to circular images except the main profile photo */
+.circle-shadow {
+  /* This adds a soft, light shadow around the image */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.2s, box-shadow 0.2s; /* smooth pop effect */
+}
+
+/* When you hover over a circular image, it pops out a bit */
+.circle-shadow:hover {
+  /* Make the image a little bigger and the shadow stronger */
+  transform: scale(1.08); /* slightly increase size */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.22); /* stronger shadow */
+}
+
+/* Contact circles row: center the two circles */
+.contact-circles {
+  display: flex;
+  justify-content: center; /* center the row */
+  gap: 36px; /* space between the two circles */
+  margin-top: 18px;
+  margin-bottom: 10px;
+}
+
+/* Each contact circle: slightly smaller than other circles */
+.contact-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style for the contact circle images */
+.contact-circle img {
+  width: 80px;   /* smaller than other section circles */
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2.5px solid #5fcbb4;
+  background-color: #e0f7f3;
+  margin-bottom: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* soft shadow */
+  transition: transform 0.2s, box-shadow 0.2s; /* smooth pop effect */
+}
+
+/* Pop out effect on hover for contact circles */
+.contact-circle img:hover {
+  transform: scale(1.10);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+}
+
+/* Label under each contact circle */
+.contact-label {
+  font-size: 1em;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  color: #18404d;
 }
